@@ -1,0 +1,33 @@
+
+    <button class="btn btn-danger" (click)='btnCloseDesigDialog()' >Close</button>
+    <form [formGroup]='form1' novalidate>
+        <mat-card style='margin-top:50px;'>
+            <mat-form-field class="example-full-width">    
+                <mat-label>Code.</mat-label>
+                <input formControlName='Code' matInput placeholder="Code.">
+                <mat-error *ngFor="let validation of validation_messages.Code">
+                              <mat-error class="error-message" *ngIf="form1.get('Code').hasError(validation.type)
+                               && (form1.get('Code').dirty || form1.get('Code').touched)">{{validation.message}}</mat-error>
+                            </mat-error>
+              </mat-form-field>
+     <mat-form-field class="example-full-width">    
+                <input matInput formControlName='Name' matInput placeholder="Name">
+                <mat-error *ngFor="let validation of validation_messages.Name">
+                              <mat-error class="error-message" *ngIf="form1.get('Name').hasError(validation.type)
+                               && (form1.get('Name').dirty || form1.get('Name').touched)">{{validation.message}}</mat-error>
+                            </mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">    
+                <input formControlName='Description' matInput placeholder="Description">
+                <mat-error *ngFor="let validation of validation_messages.class1">
+                              <mat-error class="error-message" *ngIf="form1.get('Description').hasError(validation.type)
+                               && (form1.get('Description').dirty || form1.get('Description').touched)">{{validation.message}}</mat-error>
+                            </mat-error>
+              </mat-form-field>
+
+        </mat-card>
+       <br>
+    
+       <button mat-raised-button color="warn" (click)='btnCloseDesigDialog()'>Cancel</button>
+       <button mat-raised-button color="primary" (click)='SaveRecord()'>Save</button>
+    </form>

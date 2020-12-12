@@ -1,0 +1,61 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Designations</h4>
+                        <p class="card-category"> Here is a subtitle for this table</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Code
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                               
+                                </thead>
+                                <tbody>
+                                    <ng-container *ngFor="let obj of dataSource">
+                                        <tr>
+                                            <td>
+                                                {{obj.Name}}
+                                            </td>
+                                            <td>
+                                                {{obj.Code}}
+                                            </td>
+                                            <td>
+                                                {{obj.Description}}
+                                            </td>
+                                            <td>
+                                                <button mat-raised-button color="primary" (click)='btnEditClick()'>Edit</button>
+                                            </td>
+                                   
+                                           
+                                        </tr>
+                                       
+                                    </ng-container>
+                                  
+
+                                </tbody>
+                            </table>
+
+
+    
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
